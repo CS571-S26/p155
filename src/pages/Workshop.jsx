@@ -2,7 +2,7 @@ import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap'
 
 function Workshop() {
   return (
-    <Container className="py-5">
+    <Container className="py-2">
       <h1>Workshop</h1>
       <p className="lead">Create your own trivia question in the workshop.</p>
 
@@ -70,9 +70,9 @@ function Workshop() {
 
           <Card className="mb-3">
             <Card.Body>
-              <Card.Title>How to use this app</Card.Title>
+              <Card.Title>How to</Card.Title>
               <Card.Text>
-                Use the "Answer Questions" page to interact with a trivia sample, then return here to refine your ideas.
+                Use this page to create your own trivia questions. In a future iteration, you can save and share your question sets, and even have them appear in the answer question interface for others to try!
               </Card.Text>
             </Card.Body>
           </Card>

@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap'
 
 function Welcome() {
   return (
-    <Container className="py-5">
+    <Container className="py-2">
       <h1>Welcome to the Trivia Generator</h1>
       <p className="lead">
         Here you can answer trivia questions of many categories, and even create your own sets of questions!
