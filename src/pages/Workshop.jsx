@@ -3,14 +3,14 @@ import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap'
 function Workshop() {
   return (
     <Container className="py-2">
-      <h1>Workshop</h1>
-      <p className="lead">Create your own trivia question in the workshop.</p>
+      <h1 className="page-title">Workshop</h1>
+      <p className="page-p">Create your own trivia question in the workshop.</p>
 
       <Row className="mt-4">
         <Col lg={8}>
-          <Card className="mb-3" bg="info" text="white">
+          <Card className="mb-3">
             <Card.Body>
-              <Card.Title>Question builder</Card.Title>
+              <Card.Title>Question Builder</Card.Title>
               <Form>
                 <Form.Group className="mb-3" controlId="questionText">
                   <Form.Label>Question</Form.Label>
@@ -50,7 +50,7 @@ function Workshop() {
                   <Form.Control type="text" placeholder="Enter an incorrect answer" />
                 </Form.Group>
 
-                <Button variant="light" type="button">
+                <Button variant="primary" type="button">
                   Save draft
                 </Button>
               </Form>

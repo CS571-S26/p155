@@ -1,23 +1,26 @@
 import { Form, Card } from 'react-bootstrap'
 
-function DifficultyFilter() {
-  const difficulties = ['Easy', 'Medium', 'Hard']
+function DifficultyFilter({ selectedDifficulty, onDifficultyChange }) {
+  const difficulties = ['easy', 'medium', 'hard']
 
   return (
     <Card className="mb-4">
       <Card.Body>
         <Card.Title>Filter by difficulty</Card.Title>
-        <Form>
+        <Form.Select
+          value={selectedDifficulty}
+          onChange={(event) => onDifficultyChange(event.target.value)}
+        >
+          <option value="">Any difficulty</option>
           {difficulties.map((difficulty) => (
-            <Form.Check
+            <option
               key={difficulty}
-              type="checkbox"
-              id={`difficulty-${difficulty}`}
-              label={difficulty}
-              className="mb-2"
-            />
+              value={difficulty}
+            >
+              {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
+            </option>
           ))}
-        </Form>
+        </Form.Select>
       </Card.Body>
     </Card>
   )

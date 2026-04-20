@@ -1,15 +1,18 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --text: #4f4552;
+  --text-h: #1f2840;
+  --bg: #f7f1ea;
+  --surface: #fffaf5;
+  --border: #dccabf;
+  --code-bg: #efe5db;
+  --accent: #571c24;
+  --accent-bg: rgba(122, 31, 61, 0.1);
+  --accent-border: rgba(122, 31, 61, 0.45);
+  --navy: #1f2840;
+  --navy-bg: rgba(31, 40, 64, 0.08);
+  --social-bg: rgba(255, 250, 245, 0.82);
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(79, 25, 45, 0.12) 0 10px 15px -3px, rgba(31, 40, 64, 0.08) 0 4px 6px -2px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -17,7 +20,7 @@
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -32,15 +35,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --text: #d7ccd6;
+    --text-h: #f3ecf4;
+    --bg: #151823;
+    --surface: #1c2130;
+    --border: #3c4257;
+    --code-bg: #242a3c;
+    --accent: #d97c90;
+    --accent-bg: rgba(217, 124, 144, 0.16);
+    --accent-border: rgba(217, 124, 144, 0.45);
+    --navy: #9fb0db;
+    --navy-bg: rgba(159, 176, 219, 0.12);
+    --social-bg: rgba(31, 40, 64, 0.55);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
@@ -52,6 +58,9 @@
 
 body {
   margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(122, 31, 61, 0.12), transparent 34%),
+    linear-gradient(180deg, #f8f3ee 0%, #f4ede7 100%);
 }
 
 #root {
@@ -64,6 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background: var(--surface);
 }
 
 h1,
@@ -108,4 +118,113 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+:root {
+  --bs-body-color: var(--text);
+  --bs-body-bg: var(--bg);
+  --bs-primary: var(--accent);
+  --bs-primary-rgb: 122, 31, 61;
+  --bs-secondary: var(--navy);
+  --bs-secondary-rgb: 31, 40, 64;
+  --bs-success: #2f7d5f;
+  --bs-info: #2d4f7a;
+  --bs-warning: #c08a2d;
+  --bs-danger: #9f3042;
+  --bs-light: var(--surface);
+  --bs-dark: var(--navy);
+  --bs-border-color: var(--border);
+  --bs-link-color: var(--accent);
+  --bs-link-hover-color: var(--navy);
+  --bs-card-bg: var(--surface);
+  --bs-card-border-color: var(--border);
+  --bs-card-color: var(--text);
+  --bs-navbar-color: var(--navy);
+  --bs-navbar-brand-color: var(--accent);
+  --bs-navbar-hover-color: var(--accent);
+  --bs-navbar-active-color: var(--navy);
+  --bs-navbar-toggler-border-color: rgba(31, 40, 64, 0.18);
+}
+
+button,
+.btn,
+.form-control,
+.form-select,
+.card,
+.navbar,
+.alert {
+  border-radius: 0.85rem;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: #651831;
+  border-color: #651831;
+}
+
+.btn-secondary,
+.btn-outline-secondary {
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.btn-secondary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active {
+  background-color: var(--navy);
+  color: #fffaf5;
+  border-color: var(--navy);
+}
+
+.btn-light {
+  background-color: #f6efe7;
+  border-color: #e0d0c4;
+  color: var(--navy);
+}
+
+.card {
+  background-color: var(--surface);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.navbar {
+  background-color: rgba(255, 250, 245, 0.94) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  color: var(--accent) !important;
+}
+
+.nav-link {
+  color: var(--navy) !important;
+}
+
+.nav-link.active {
+  color: var(--accent) !important;
+}
+
+.form-control,
+.form-select {
+  background-color: #fffdf9;
+  border-color: var(--border);
+  color: var(--text-h);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(122, 31, 61, 0.15);
+}
+
+.alert-danger {
+  background-color: rgba(159, 48, 66, 0.1);
+  border-color: rgba(159, 48, 66, 0.35);
+  color: #7d2434;
 }

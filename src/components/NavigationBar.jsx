@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function NavigationBar() {
   return (
-    <Navbar bg="light" expand="lg" className="shadow-sm mb-2" sticky="top">
+    <Navbar expand="lg" className="shadow-sm mb-2" sticky="top">
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="fw-bold">
           Trivia Generator
