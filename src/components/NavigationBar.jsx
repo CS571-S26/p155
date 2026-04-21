@@ -6,7 +6,7 @@ function NavigationBar() {
     <Navbar expand="lg" className="shadow-sm mb-2" sticky="top">
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="fw-bold">
-          Trivia Generator
+          Trivia Factory
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
@@ -18,7 +18,7 @@ function NavigationBar() {
               Answer Questions
             </Nav.Link>
             <Nav.Link as={NavLink} to="/workshop">
-              Workshop
+              Suggest
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

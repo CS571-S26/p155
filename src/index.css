@@ -1,5 +1,5 @@
 :root {
-  --text: #4f4552;
+  --text: #4c1919;
   --text-h: #1f2840;
   --bg: #f7f1ea;
   --surface: #fffaf5;
@@ -7,7 +7,7 @@
   --code-bg: #efe5db;
   --accent: #571c24;
   --accent-bg: rgba(122, 31, 61, 0.1);
-  --accent-border: rgba(122, 31, 61, 0.45);
+  --accent-border: rgba(94, 35, 35, 0.45);
   --navy: #1f2840;
   --navy-bg: rgba(31, 40, 64, 0.08);
   --social-bg: rgba(255, 250, 245, 0.82);
@@ -35,16 +35,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #d7ccd6;
-    --text-h: #f3ecf4;
+    --text: #5e1d1d;
+    --text-h: #4f2323;
     --bg: #151823;
     --surface: #1c2130;
     --border: #3c4257;
     --code-bg: #242a3c;
-    --accent: #d97c90;
+    --accent: rgb(106, 0, 0);
     --accent-bg: rgba(217, 124, 144, 0.16);
     --accent-border: rgba(217, 124, 144, 0.45);
-    --navy: #9fb0db;
+    --navy: #1a2541;
     --navy-bg: rgba(159, 176, 219, 0.12);
     --social-bg: rgba(31, 40, 64, 0.55);
     --shadow:

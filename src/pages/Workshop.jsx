@@ -3,8 +3,8 @@ import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap'
 function Workshop() {
   return (
     <Container className="py-2">
-      <h1 className="page-title">Workshop</h1>
-      <p className="page-p">Create your own trivia question in the workshop.</p>
+      <h1 className="page-title">Suggest Questions</h1>
+      <p className="page-p">Use your personal expertise to create your own trivia suggestion!</p>
 
       <Row className="mt-4">
         <Col lg={8}>
@@ -63,7 +63,7 @@ function Workshop() {
             <Card.Body>
               <Card.Title>Design tips</Card.Title>
               <Card.Text>
-                Keep trivia questions clear, well-scoped, and fun. Mix question types like history, science, and pop culture.
+                Keep trivia questions clear, well-scoped, and fun. Make sure to fact-check!
               </Card.Text>
             </Card.Body>
           </Card>
@@ -72,7 +72,7 @@ function Workshop() {
             <Card.Body>
               <Card.Title>How to</Card.Title>
               <Card.Text>
-                Use this page to create your own trivia questions. In a future iteration, you can save and share your question sets, and even have them appear in the answer question interface for others to try!
+                Input the question, category, and 4 answer choices to build a question.
               </Card.Text>
             </Card.Body>
           </Card>

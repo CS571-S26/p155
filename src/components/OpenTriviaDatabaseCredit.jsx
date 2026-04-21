@@ -10,13 +10,7 @@ function OpenTriviaDatabaseCredit() {
         style={{ width: '75%', maxWidth: 500, borderWidth: 2 }}
       >
         <Card.Body>
-          <div className="mb-3">
-            <img
-              src={opentdbImage}
-              alt="Open Trivia Database Logo"
-              style={{ maxHeight: '70px', filter: 'drop-shadow(0 2px 6px rgba(31, 40, 64, 0.18))' }}
-            />
-          </div>
+          
           <Card.Title style={{ fontWeight: 700, color: 'var(--navy)' }}>Questions Powered By</Card.Title>
           <Card.Text style={{ fontSize: '1rem' }}>
             This application uses the{' '}
@@ -28,6 +22,13 @@ function OpenTriviaDatabaseCredit() {
               Special thanks to the Open Trivia Database, and be sure to check them out!
             </span>
           </Card.Text>
+          <div className="mb-3">
+            <img
+              src={opentdbImage}
+              alt="Open Trivia Database Logo"
+              style={{ maxHeight: '70px', filter: 'drop-shadow(0 2px 6px rgba(31, 40, 64, 0.18))' }}
+            />
+          </div>
         </Card.Body>
       </Card>
     </div>
