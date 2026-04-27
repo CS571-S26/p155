@@ -4,13 +4,12 @@ import opentdbImage from '../assets/opentdb.png'
 
 function OpenTriviaDatabaseCredit() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: 100 }}>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <Card
         className="mt-4 text-center"
         style={{ width: '75%', maxWidth: 500, borderWidth: 2 }}
       >
         <Card.Body>
-          
           <Card.Title style={{ fontWeight: 700, color: 'var(--navy)' }}>Questions Powered By</Card.Title>
           <Card.Text style={{ fontSize: '1rem' }}>
             This application uses the{' '}

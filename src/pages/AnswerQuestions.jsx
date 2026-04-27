@@ -193,6 +193,9 @@ function AnswerQuestions() {
             selectedDifficulty={selectedDifficulty}
             onDifficultyChange={setSelectedDifficulty}
           />
+          <p className="page-p">
+            Filters apply when 'Next Question' is clicked.
+          </p>
         </Col>
         <Col lg={9}>
           <h1 className="page-title">Answer Questions</h1>

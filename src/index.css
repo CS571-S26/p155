@@ -11,6 +11,7 @@
   --navy: #1f2840;
   --navy-bg: rgba(31, 40, 64, 0.08);
   --social-bg: rgba(255, 250, 245, 0.82);
+  --app-max-width: 1600px;
   --shadow:
     rgba(79, 25, 45, 0.12) 0 10px 15px -3px, rgba(31, 40, 64, 0.08) 0 4px 6px -2px;
 
@@ -64,8 +65,8 @@ body {
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  max-width: var(--app-max-width);
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);
@@ -74,6 +75,17 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background: var(--surface);
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: min(1500px, 96vw);
+  }
 }
 
 h1,
