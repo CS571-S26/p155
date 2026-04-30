@@ -16,6 +16,9 @@ function Welcome() {
         <OpenTriviaDatabaseCredit />
         <TriviaFactoryCallout />
       </div>
+      <p className="page-p" style={{marginTop: '2rem'}}>
+        made by Justin Buschke
+      </p>
     </Container>
   )
 }

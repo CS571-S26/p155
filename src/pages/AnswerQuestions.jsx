@@ -3,6 +3,8 @@ import { Container, Row, Col, Card, Alert, Spinner, Button } from 'react-bootstr
 import CategoryFilter from '../components/CategoryFilter.jsx'
 import DifficultyFilter from '../components/DifficultyFilter.jsx'
 import TriviaQuestionPanel from '../components/TriviaQuestionPanel.jsx'
+import StreakDisplay from '../components/StreakDisplay.jsx'
+import { recordTriviaResponse } from '../utils/triviaStats.js'
 import './AnswerQuestions.css'
 
 const TRIVIA_API_URL = 'https://opentdb.com/api.php?amount=1&type=multiple'
@@ -79,6 +81,8 @@ function AnswerQuestions() {
   const [currentTime, setCurrentTime] = useState(Date.now())
   const [selectedCategoryId, setSelectedCategoryId] = useState('')
   const [selectedDifficulty, setSelectedDifficulty] = useState('')
+  const [streak, setStreak] = useState(0)
+  const [hasAttemptedCurrentQuestion, setHasAttemptedCurrentQuestion] = useState(false)
   const incorrectOverlayTimeoutRef = useRef(null)
 
   async function loadQuestion() {
@@ -91,6 +95,7 @@ function AnswerQuestions() {
     setErrorMessage('')
     setResponseState('')
     setIsQuestionLocked(false)
+    setHasAttemptedCurrentQuestion(false)
     setCurrentTime(Date.now())
 
     try {
@@ -160,13 +165,40 @@ function AnswerQuestions() {
       return
     }
 
+    const categoryLabel = questionData.category || 'Uncategorized'
+    const difficultyLabel = questionData.difficulty || 'Unknown'
     const decodedCorrectAnswer = decodeHtmlEntities(questionData.correct_answer)
 
     if (selectedAnswer === decodedCorrectAnswer) {
       setResponseState('correct')
       setIsQuestionLocked(true)
+      // Increment streak if this is the first attempt
+      if (!hasAttemptedCurrentQuestion) {
+        const nextStreak = streak + 1
+        setStreak(nextStreak)
+        recordTriviaResponse({
+          category: categoryLabel,
+          difficulty: difficultyLabel,
+          isCorrect: true,
+          currentStreak: nextStreak
+        })
+      } else {
+        recordTriviaResponse({
+          category: categoryLabel,
+          difficulty: difficultyLabel,
+          isCorrect: true
+        })
+      }
     } else {
       setResponseState('incorrect')
+      setStreak(0)
+      // Mark that we've attempted this question (so any subsequent correct answer won't count as first-try)
+      setHasAttemptedCurrentQuestion(true)
+      recordTriviaResponse({
+        category: categoryLabel,
+        difficulty: difficultyLabel,
+        isCorrect: false
+      })
 
       if (incorrectOverlayTimeoutRef.current) {
         clearTimeout(incorrectOverlayTimeoutRef.current)
@@ -204,7 +236,7 @@ function AnswerQuestions() {
           </p>
           <Card className="mb-4">
             <Card.Body>
-              <Card.Title>Trivia question</Card.Title>
+              <Card.Title as="h2" className="h5">Trivia question</Card.Title>
 
               {isLoading && (
                 <div className="d-flex align-items-center gap-2">
@@ -237,6 +269,7 @@ function AnswerQuestions() {
                     disableAnswers={isQuestionLocked}
                     onAnswerSelect={handleAnswerClick}
                   />
+                  
                   <div className="next-question-wrap d-flex justify-content-center">
                     <Button onClick={loadQuestion} disabled={isNextQuestionDisabled}>
                       {cooldownSecondsRemaining > 0
@@ -248,6 +281,9 @@ function AnswerQuestions() {
               )}
             </Card.Body>
           </Card>
+          <div className="mt-4 mb-4">
+            <StreakDisplay streak={streak} />
+          </div>
         </Col>
       </Row>
     </Container>

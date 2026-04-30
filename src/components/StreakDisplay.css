@@ -1,0 +1,29 @@
+.streak-card {
+  border: 2px solid #ffc107;
+  background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);
+}
+
+.streak-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
+.streak-count {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0.5rem 0;
+  line-height: 1;
+}
+
+.streak-subtext {
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 500;
+}

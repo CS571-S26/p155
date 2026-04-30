@@ -36,19 +36,22 @@ function CategoryFilter({ selectedCategoryId, onCategoryChange }) {
   return (
     <Card className="mb-4">
       <Card.Body>
-        <Card.Title>Filter by category</Card.Title>
-        <Form.Select
-          value={selectedCategoryId}
-          onChange={(event) => onCategoryChange(event.target.value)}
-          disabled={isLoading || Boolean(errorMessage)}
-        >
-          <option value="">Any category</option>
-          {categories.map((category) => (
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>
-          ))}
-        </Form.Select>
+        <Card.Title as="h2" className="h5">Filter by category</Card.Title>
+        <Form.Group controlId="categoryFilterSelect">
+          <Form.Label className="visually-hidden">Category</Form.Label>
+          <Form.Select
+            value={selectedCategoryId}
+            onChange={(event) => onCategoryChange(event.target.value)}
+            disabled={isLoading || Boolean(errorMessage)}
+          >
+            <option value="">Any category</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </Form.Select>
+        </Form.Group>
         {errorMessage && <div className="text-danger small mt-2">{errorMessage}</div>}
       </Card.Body>
     </Card>

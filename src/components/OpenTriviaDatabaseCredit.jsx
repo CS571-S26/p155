@@ -10,7 +10,9 @@ function OpenTriviaDatabaseCredit() {
         style={{ width: '75%', maxWidth: 500, borderWidth: 2 }}
       >
         <Card.Body>
-          <Card.Title style={{ fontWeight: 700, color: 'var(--navy)' }}>Questions Powered By</Card.Title>
+          <Card.Title as="h2" className="h5" style={{ fontWeight: 700, color: 'var(--navy)' }}>
+            Questions Powered By
+          </Card.Title>
           <Card.Text style={{ fontSize: '1rem' }}>
             This application uses the{' '}
             <a href="https://opentdb.com" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, color: 'var(--accent)', textDecoration: 'underline' }}>

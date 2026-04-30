@@ -27,7 +27,7 @@ function TriviaFactoryCallout() {
             />
             <div className="d-flex flex-column align-items-center justify-content-center text-center">
               <div className="fw-semibold" style={{ color: 'var(--navy)', fontWeight: 700, fontSize: '1.45rem', lineHeight: 1.25 }}>
-                Start answering Questions!
+                Start Answering Questions!
               </div>
               <div className="fw-bold" style={{ color: 'var(--accent)', fontSize: '2.8rem', lineHeight: 1 }} aria-hidden="true">
                 →

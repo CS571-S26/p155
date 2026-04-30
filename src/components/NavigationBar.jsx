@@ -25,8 +25,8 @@ function NavigationBar() {
             <Nav.Link as={NavLink} to="/answer">
               Answer Questions
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/workshop">
-              Suggest
+            <Nav.Link as={NavLink} to="/stats">
+              Stats
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
